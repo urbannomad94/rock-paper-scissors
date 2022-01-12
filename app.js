@@ -12,6 +12,7 @@ function computerPlay() {
     }
 }
 
+//Single round of RPS
 function playRound (playerSelection, computerSelection) {
     playerSelection = prompt("Rock, paper, or scissors?").toLowerCase();
     computerSelection = computerPlay();
@@ -61,22 +62,28 @@ function playRound (playerSelection, computerSelection) {
         win++;
     }
 
+    else {
+        alert("Not a valid entry.")
+        console.log  ("Not a valid entry");
+    }
+
 }
 
+//5 rounds of RPS and alerts wins, losses, and ties after last round
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound(playerSelection, computerSelection);
     }
-    alert("Wins: " + win + "\nLosses: " + loss + "\nTie: " + tie);
+    alert("Wins: " + win + "\nLosses: " + loss + "\nTies: " + tie);
 }
 
+//Declaring variables
 let computerSelection;
 let playerSelection;
 
-let result;
 let tie = 0;
 let win = 0;
 let loss = 0;
 
-//playRound(playerSelection, computerSelection);
+//Running game function
 game();
