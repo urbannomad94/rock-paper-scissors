@@ -1,10 +1,10 @@
 //Computer will randomly choose rock, paper, or scissors
 function computerPlay() {
-    random=Math.random()*3;
-    if (random<=1) {
+    random = Math.random()*3;
+    if (random <= 1) {
         return "rock";
     }
-    else if (random<=2) {
+    else if (random <= 2) {
         return "paper";
     }
     else {
