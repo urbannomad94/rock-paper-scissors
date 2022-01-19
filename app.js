@@ -19,7 +19,7 @@ let compLoss = 0;
 //Assigns user's choice based on which button they click
 possibleChoices.forEach(possibleChoices => possibleChoices.addEventListener('click', (e) => {
    playerSelection = e.target.id;
-   playerSelectionDisplay.innerHTML = playerSelection;
+   playerSelectionDisplay.textContent = playerSelection;
    computerPlay();
    playRound();
    scoreCalculation();
@@ -48,43 +48,43 @@ function playRound () {
 
     if (playerSelection === computerSelection) {
         result = "Tie";
-        tie++;
+        ++tie;
     }
 
     else if (playerSelection === "rock" && computerSelection === "paper"){
         result = "You lose, paper beats rock.";
-        loss++;
-        compWin++;
+        ++loss;
+        ++compWin;
     }
 
     else if (playerSelection === "rock" && computerSelection === "scissors"){
         result = "You win, rock beats scissors.";
-        win++;
-        compLoss++;
+        ++win;
+        ++compLoss;
     }
 
     else if (playerSelection === "paper" && computerSelection === "rock"){
         result = "You win, paper beats rock.";
-        win++;
-        compLoss++;
+        ++win;
+        ++compLoss;
     }
 
     else if (playerSelection === "paper" && computerSelection === "scissors"){
         result = "You lose, scissors beats paper.";
-        loss++;
-        compWin++;
+        ++loss;
+        ++compWin;
     }
 
     else if (playerSelection === "scissors" && computerSelection === "rock"){
         result = "You lose, rock beats scissors.";
-        loss++;
-        compWin++;
+        ++loss;
+        ++compWin;
     }
 
     else if (playerSelection === "scissors" && computerSelection === "paper"){
         result = "You win, scissors beats paper.";
-        win++;
-        compLoss++;
+        ++win;
+        ++compLoss;
     }
 
     else {
@@ -103,18 +103,23 @@ function scoreCalculation() {
 function displayWinner() {
     if (win >= 5) {
         alert("You won!");
+        resetScore();
     }
     if (compWin >= 5) {
         alert("You lost!");
+        resetScore();
     }
 }
 
 //Gives reset button functionality
-reset.addEventListener ('click', () => {
+reset.addEventListener ('click', resetScore);
+
+//Resets score
+function resetScore() {
     tie = 0;
     win = 0;
     loss = 0;
     compWin = 0;
     compLoss = 0;
     location.reload();
-})
+}
