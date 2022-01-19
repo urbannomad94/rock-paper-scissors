@@ -1,0 +1,52 @@
+body {
+    font-family: "Helvetica", sans-serif;
+    background-image: url(https://media.istockphoto.com/photos/abstract-blue-background-with-grunge-texture-and-white-geometric-and-picture-id1293539824?b=1&k=20&m=1293539824&s=170667a&w=0&h=GnQ_AHJ4ob3B0K_nc-l-Ihiff9gWqnNkfLpWYpz0M9U=);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+button {
+    width: 100px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position: bottom left;
+}
+
+button#rock{
+    background-image: url(img/rock.png); 
+}
+
+button#paper{
+    background-image: url(img/paper.png);
+}
+
+button#scissors{
+    background-image: url(img/scissors.png);
+}
+
+#title {
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.output {
+    text-align: center;
+}
+
+#resetContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+button#reset {
+    height: 25px;
+}
