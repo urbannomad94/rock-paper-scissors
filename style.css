@@ -13,6 +13,12 @@ button {
     background-size: cover;
     background-position: center;
     background-position: bottom left;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 1;
 }
 
 button#rock{
@@ -49,4 +55,9 @@ button#scissors{
 
 button#reset {
     height: 25px;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
